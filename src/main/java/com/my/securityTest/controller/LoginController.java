@@ -14,18 +14,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class LoginController {
     private final JoinService joinService;
 
-@GetMapping("/login")
+    @GetMapping("/login")
     public String login() {
-    return "login";
-}
+        return "login";
+    }
 
-    @Controller
-    public class JoinController {
-        @GetMapping("/join")
-        public String join() {
-            return "join";
-        }
-}
+    @GetMapping("/join")
+    public String join() {
+        return "join";
+    }
 
     @PostMapping("/joinProc")
     public String joinProcess(JoinDto joinDto) {
