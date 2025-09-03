@@ -22,11 +22,11 @@ public class JoinService {
         }
         // 2. 없으면 비밀번호를 암호화해서 저장하기
         UserEntity newUser = new UserEntity();
-        newUser.setUsername(joinDto.getUsername());
+        newUser.setUserName(joinDto.getUsername());
         // 비밀번호를 암호화해서 엔티티에 넣기
         newUser.setPassword(bCryptPasswordEncoder
                 .encode(joinDto.getPassword()));
-        newUser.setRole(UserRole.ROLE_USER);
+        newUser.setRole(UserRole.ROLE_ADMIN);
         // 저장
         userRepository.save(newUser);
     }
